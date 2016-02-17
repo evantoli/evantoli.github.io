@@ -1,0 +1,29 @@
+{
+  "name": "my-test-blog",
+  "authors": [
+    "Evan Toliopoulos <evantoliopoulos@softwarekitchen.com.au>"
+  ],
+  "description": "my-test-blog",
+  "main": "index.htmljs/main.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "blog"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2",
+    "components-font-awesome": "^4.5.0"
+  }
+}

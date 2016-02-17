@@ -1,0 +1,23 @@
+
+
+.post-categories {
+  background-color: $grey-color-light;
+  padding-left: 0.5em;
+  font-size: $small-font-size;
+  font-style: italic;
+  color: $grey-color-dark;
+
+  span {
+    font-style: normal;
+  }
+}
+
+.post-image-teaser {
+  max-width: 100%;
+  max-height: 20em;
+}
+
+.site-header {
+  background-image: $banner-image-url;
+  background-size: 100%;
+}

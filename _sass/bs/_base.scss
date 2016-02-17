@@ -1,0 +1,33 @@
+
+
+/**
+ * I might not need this. %vertical-rhythm is used by
+ * _syntax-highlighting.scss.
+ * It came from the default Jekyll _base.scss
+ *
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
+}
+
+
+/**
+ * Icons
+ */
+.icon {
+
+  > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+
+    path {
+      fill: $grey-color;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+---
+layout: default
+title: Just Playing
+category: Coding
+---
+
+p. This is a paragraph
+
+<!--end-of-excerpt-->
+
+p. This is another paragraph
+
+
