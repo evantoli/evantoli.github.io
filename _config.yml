@@ -20,7 +20,7 @@ excerpt_separator: <!--end-of-excerpt-->
 
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 
 permalink: /:year/:month/:day/:title/
 
