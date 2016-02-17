@@ -3,6 +3,16 @@
 ---
 @charset "utf-8";
 
+// Our variables
+$base-font-family: Lustria, Georgia, serif;
+$base-font-size:   20px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.75;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+
 
 $banner-image-url: url( {{ site.banner }} );
 
@@ -13,9 +23,6 @@ $grey-color-dark:  darken($grey-color, 25%);
 $post-categories-color:      #828282;
 $post-categories-bg-color:   lighten($post-categories-color, 40%);
 $post-categories-text-color: darken($post-categories-color, 25%);
-
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
 
 
 /**

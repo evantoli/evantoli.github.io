@@ -1,4 +1,12 @@
 
+/**
+ * Basic styling
+ */
+body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+}
 
 /**
  * I might not need this. %vertical-rhythm is used by

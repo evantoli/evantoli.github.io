@@ -40,6 +40,8 @@ header {
   }
 
   .post-categories {
+    @extend %vertical-rhythm;
+
     background-color: $post-categories-bg-color;
     padding-left: 0.5em;
     font-size: $small-font-size;
