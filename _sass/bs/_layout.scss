@@ -4,6 +4,8 @@ nav.navbar {
 }
 
 header {
+  @extend %vertical-rhythm;
+
   background-image: $banner-image-url;
   background-size: 100%;
   background-position: center;
@@ -11,18 +13,18 @@ header {
 }
 
 
-
-.post-list {
+.main-page-content {
   margin-left: 0;
   list-style: none;
 
   > .container {
     max-width: 60rem;
   }
+}
 
-  > li {
-    margin-bottom: $spacing-unit;
-  }
+.post-list {
+  margin-left: 0;
+  list-style: none;
 
   .post-image-teaser {
     max-width: 100%;
