@@ -32,7 +32,7 @@ header {
   }
 
   .post-meta {
-    font-size: $small-font-size;
+    font-size: $font-size-sm;
     color: $grey-color;
   }
 
@@ -46,7 +46,7 @@ header {
 
     background-color: $post-categories-bg-color;
     padding-left: 0.5em;
-    font-size: $small-font-size;
+    font-size: $font-size-sm;
     font-style: italic;
     color: $post-categories-text-color;
 
@@ -67,7 +67,7 @@ footer {
   }
 
   .footer-heading {
-    font-size: $base-font-size;
+    font-size: $font-size-base;
   }
 
   .contact-list,
