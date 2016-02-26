@@ -9,6 +9,7 @@
             <img class="post-image-teaser" src="{{ site.baseurl }}/images/{{ post.image.teaser }}"/>
         {% endif %}
         <p>{{ post.excerpt }}</p>
+        <p><a href="{{ post.url | prepend: site.baseurl }}">...continue reading</a></p>
         <div class="post-categories">
             {% for category in post.categories %}
                 {% if forloop.first %}

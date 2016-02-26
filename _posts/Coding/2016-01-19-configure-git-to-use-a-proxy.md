@@ -17,7 +17,7 @@ then you may need to configure a proxy server or SSL certificates.
 
 <!--end-of-excerpt-->
 
-##Just get me going
+## Just get me going
 
 You may need to configure a proxy server if you're having trouble cloning 
 or fetching from a remote repository or getting an error 

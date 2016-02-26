@@ -3,7 +3,7 @@
     <h2>Tags</h2>
     <ul class="tags">
         {% for tag in site.tags %}
-            <li style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 35}}%">
+            <li style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 60}}%">
                 <a href="/{{ tags | first | slugize }}/">{{ tag | first }}</a>
             </li>
         {% endfor %}
