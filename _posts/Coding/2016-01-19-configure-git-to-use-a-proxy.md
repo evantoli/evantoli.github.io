@@ -3,7 +3,9 @@ layout: post
 title: Configure Git to use a proxy
 categories: 
   - Coding
+tags:
   - Git
+  - Proxy
 image:
   teaser: git-logo-400x250.png
 ---

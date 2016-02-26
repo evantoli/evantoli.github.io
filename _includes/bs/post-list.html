@@ -9,9 +9,19 @@
             <img class="post-image-teaser" src="{{ site.baseurl }}/images/{{ post.image.teaser }}"/>
         {% endif %}
         <p>{{ post.excerpt }}</p>
-        <div class="post-categories">Categories:
+        <div class="post-categories">
             {% for category in post.categories %}
+                {% if forloop.first %}
+                    <i class="fa fa-folder-open"></i>
+                {% endif %}
                 <span>{{ category }}</span>
+            {% endfor %}
+
+            {% for tag in post.tags %}
+                {% if forloop.first %}
+                    <i class="fa fa-tags"></i>
+                {% endif %}
+                <span>{{ tag }}</span>
             {% endfor %}
         </div>
     {% endfor %}

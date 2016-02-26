@@ -56,6 +56,16 @@ header {
   }
 }
 
+.tag-cloud {
+  ul {
+    padding-left: 1.6rem;
+  }
+  li {
+    list-style: none;
+    display: inline;
+    padding-right: 0.5rem;
+  }
+}
 
 
 footer {
