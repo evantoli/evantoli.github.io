@@ -12,7 +12,7 @@ tags:
 image:
 ---
 
-Veronika discovered this recipe one day when looking for new ideas with
+Veronika discovered this recipe a while back when looking for new ideas with
 beetroot and it is a favourite in our house. We often make two so that we can have it for
 lunch the next day.
 
@@ -80,7 +80,7 @@ forgoing this tart.
     * Crumble goat's cheese over the beetroot. 
     * Whisk eggs, cream and nutmeg and pour over the beetroot and cheese.
     * Scatter over some sprigs of thyme.
-0. Bake for 35 minutes or until set.
+0. Bake for 35-45 minutes or until set.
 
 Enjoy!
     
