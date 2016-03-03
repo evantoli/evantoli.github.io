@@ -1,0 +1,50 @@
+---
+layout: bs/default
+---
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <header class="post-header">
+          <h2 itemprop="name headline">{{ page.title }}</h2>
+          <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %b %Y" }}</time>
+            {% if page.author %} •
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                        itemprop="name">{{ page.author }}</span></span>
+            {% endif %}
+          </div>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+          {{ content }}
+        </div>
+
+        <div class="post-meta">
+          <div class="post-categories">
+            {% for category in page.categories %}
+            {% if forloop.first %}
+            <i class="fa fa-folder-open"></i>
+            {% endif %}
+            <span class="post-category">{{ category }}</span>
+            {% endfor %}
+          </div>
+          <div class="post-tags">
+            {% for tag in page.tags %}
+            {% if forloop.first %}
+            <i class="fa fa-tags"></i>
+            {% endif %}
+            <span class="post-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+
+      </article>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+

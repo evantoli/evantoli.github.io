@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Configure Git to use a proxy
-categories: 
+categories:
   - Coding
 tags:
   - Git

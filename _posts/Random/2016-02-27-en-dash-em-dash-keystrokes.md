@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to make en-dashes and em-dashes
-categories: 
+categories:
   - Random
 tags:
   - Dashes

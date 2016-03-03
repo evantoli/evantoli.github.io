@@ -12,7 +12,7 @@ tags:
 image:
 ---
 
-Veronika discovered this recipe a while back when looking for new ideas with
+Vee discovered this recipe a while back when looking for new ideas with
 beetroot and it is a favourite in our house. We often make two so that we can have it for
 lunch the next day.
 
@@ -87,9 +87,9 @@ Enjoy!
 #### Credit
 
 This recipe is an adaptation of a
-[recipe by Valli Little](http://www.taste.com.au/recipes/26858/beetroot+and+goats+cheese+tart)
-found on [www.taste.com.au](http://www.taste.com.au) and originally appearing
-in [delicious.](http://www.delicious.com.au) magazine – March 2011, Page 64.
+<a href="http://www.taste.com.au/recipes/26858/beetroot+and+goats+cheese+tart" target="_blank">recipe by Valli Little</a>
+found on
+<a href="http://www.taste.com.au/recipes/26858/beetroot+and+goats+cheese+tart" target="_blank">www.taste.com.au</a>.
 
 
 
