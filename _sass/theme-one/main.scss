@@ -1,0 +1,39 @@
+
+@charset "utf-8";
+
+// Override Bootstrap Variables
+$font-family-base: Lustria, Georgia, serif;
+$line-height:      1.75;
+
+// Our own variables
+$base-font-weight: 400;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$post-categories-color:      #828282;
+$post-categories-bg-color:   transparent;
+$post-categories-text-color: lighten($post-categories-color, 10%);
+
+
+//
+// From Original Jekyll _base.scss
+// Used in the _syntax-highlight.scss via the %vertical-spacing
+//
+$spacing-unit:     2rem;
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "vendor/bootstrap/bootstrap",
+        "theme-one/base",
+        "theme-one/layout",
+        "theme-one/parallax",
+        "syntax-highlighting"
+;
+
+
