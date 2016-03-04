@@ -1,0 +1,21 @@
+---
+layout: theme-one/default
+---
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+
+        {% include theme-one/post-list.html posts=site.posts %}
+
+      </div>
+      <div class="col-sm-4">
+
+        {% include theme-one/post-index.html posts=site.posts %}
+
+        {% include theme-one/tag-cloud.html %}
+
+      </div>
+    </div>
+  </div>

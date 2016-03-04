@@ -1,5 +1,5 @@
 ---
-layout: bs/default
+layout: theme-one/default
 ---
 
 <div class="container">
@@ -7,12 +7,12 @@ layout: bs/default
         <div class="col-sm-8">
 
             {% assign category_posts=site.categories.[page.type] %}
-            {% include bs/post-list.html posts=category_posts %}
+            {% include theme-one/post-list.html posts=category_posts %}
 
         </div>
         <div class="col-sm-4">
 
-            {% include bs/post-index.html posts=category_posts %}
+            {% include theme-one/post-index.html posts=category_posts %}
 
         </div>
     </div>

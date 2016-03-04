@@ -3,8 +3,36 @@
 ---
 @charset "utf-8";
 
+// Override Bootstrap Variables
+$font-family-base: Lustria, Georgia, serif;
+$line-height:      1.75;
+
+// Our own variables
+$base-font-weight: 400;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+
+$banner-image-url: url( {{ site.banner }} );
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$post-categories-color:      #828282;
+$post-categories-bg-color:   transparent;
+$post-categories-text-color: lighten($post-categories-color, 10%);
 
 
+/**
+ * From Original Jekyll _base.scss
+ * Used in the _syntax-highlight.scss via the %vertical-spacing
+ */
+$spacing-unit:     30px;
+
+
+
+/*
 // Our variables
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
@@ -12,7 +40,6 @@ $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
@@ -28,12 +55,7 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-
-// =============================
-// theme-2016 variables
-$banner-image-url: url( {{ site.banner_slim }} );
-// end of theme-2016 variables
-// =============================
+*/
 
 
 // Use media queries like this:
@@ -43,20 +65,22 @@ $banner-image-url: url( {{ site.banner_slim }} );
 //         padding-left: $spacing-unit / 2;
 //     }
 // }
+/*
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
     }
 }
-
+*/
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "syntax-highlighting",
-        "theme-2016"
+        "vendor/bootstrap/bootstrap",
+        "theme-one/base",
+        "theme-one/layout",
+        "theme-one/parallax",
+        "syntax-highlighting"
 ;
 
 
