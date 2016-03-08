@@ -93,7 +93,7 @@ java -jar ~/svn-migration-scripts.jar create-disk-image 5 GitMigration
 #### Otherwise create a `GitMigration` directory
 
 If you skipped the above step then the rest of this post will assume that
-you have created a directory in which to the migration:
+you have created a directory in which to do the migration:
  
 ~~~bash
 mkdir GitMigration
@@ -142,7 +142,7 @@ git svn clone --stdlayout --authors-file=authors.txt https://your.svn.repo/your-
 
 #### Non-standard SVN layouts?
 
-Use command-line options to identify non-standard SVN trunk, branch and tag structures:
+Use command-line options to identify non-standard SVN trunk, branch and tag locations:
 
 ~~~
 git svn clone --trunk=/trunk --branches=/branches 
@@ -152,7 +152,7 @@ git svn clone --trunk=/trunk --branches=/branches
 
 ## Convert remote branches to local branches and Git tags
 
-The `git svn clone` converts SVN branches and tags into Git remote branches. We
+The `git svn clone` command converts SVN branches and tags into Git remote branches. We
 will now convert these into local branches and actual Git tags using the `clean-git`
 script in the Atlassian `svn-migration-scripts.jar`.
 
@@ -171,12 +171,12 @@ java -Dfile.encoding=utf-8 -jar ~/svn-migration-scripts.jar clean-git --force
 
 ## Create an actual remote Git repository 
 
-You will now need an actual Git remote repository. This may be a GitHub account,
-a BitBucket server, or something else. Generally you will use their user interface
+You will now need an actual Git remote repository. This may be on a GitHub, BitBucket,
+or other Git server. You will probably use their user interface
 to create a new empty repository and then take note of
 the repository URL.
 
-### Add an origin remote to you local Git repository
+### Add an origin remote to your local Git repository
 
 Assuming that your GitHub or BitBucket server will become your official
 code-base and be known as the `origin` you would set this into your
