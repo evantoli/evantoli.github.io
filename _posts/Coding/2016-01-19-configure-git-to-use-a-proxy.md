@@ -7,7 +7,8 @@ tags:
   - Git
   - Proxy
 image:
-  teaser: git-logo-400x250.png
+  teaser: git-logo.png
+  
 ---
 
 If you're at work and are having trouble cloning or fetching from a remote 

@@ -10,7 +10,8 @@ tags:
   - GitHub
   - BitBucket
 image:
-  teaser: git-logo-400x250.png
+  teaser: svn-2-git.png
+  
 ---
 
 In this post I describe the steps that will easily get your

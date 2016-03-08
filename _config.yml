@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Just trying out Jekyll for delivery via GitHub Pages. This blog-site is me
   simply experimenting with Jekyll and GitHub pages. Don’t expect much from it.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "http://evantoli.github.io" # the base hostname & protocol for your site
 twitter_username: evantoli
 github_username:  evantoli
 linkedin_username:  evantoli
