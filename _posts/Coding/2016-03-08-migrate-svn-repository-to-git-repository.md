@@ -13,49 +13,33 @@ image:
   teaser: git-logo-400x250.png
 ---
 
-This is a condensed TL;DR version of the Atlassian tutorial 
+In this post I describe the steps that will easily get your
+source code out of Subversion and into Git. This process
+is actually a condensed—spare me the fluff version—of the Atlassian tutorial 
 "<a href="https://www.atlassian.com/git/tutorials/migrating-overview" target="_blank">Migrate to Git from SVN</a>"
 
-It assumes you are familiar with SVN and GIT concepts. If you're not then refer to the Atlassian tutorial.
+I'll assume you are familiar with SVN and GIT concepts. If you're not then perhaps you should
+refer to the Atlassian tutorial which goes into much, much more detail.
 
-The whole process is detailed below but will look something like:
+At the end of this post I also provide a bare-bones run-sheet outlining the commands in
+a script fashion.
 
-~~~bash
-# Download migration scripts
-cd ~
-wget https://bitbucket.org/atlassian/svn-migration-scripts/downloads/svn-migration-scripts.jar
-java -jar ~/svn-migration-scripts.jar verify
+The steps broadly are:
 
-# Clone your SVN repository into a local Git repository
-mkdir GitMigration
-cd GitMigration
-git svn clone --stdlayout --authors-file=authors.txt http://your.svn.repo/your-svn-project local-git-repository
+* Download migration helper.
+* Create an authors mapping file.
+* Clone your SVN repo into a local Git repository.
+* Convert remote branches and tags.
+* Create an actual remote repository.
+* Push your local Git to your remote Git repo.
 
-# Clean up remote branches and tags
-java -Dfile.encoding=utf-8 -jar ~/svn-migration-scripts.jar clean-git 
-java -Dfile.encoding=utf-8 -jar ~/svn-migration-scripts.jar clean-git --force
-
-# Create an actual remote Git repository, for example, on a GitHub or 
-# Bitbucket server, then come back and continue.
-
-# Add the remote origin URL
-git remote add origin https://username@remote-repo-url/username/remote-repo-name.git 
-
-# Push all source and tags
-git push -u origin --all
-git push --tags
-~~~
 
 <!--end-of-excerpt-->
 
-## The full process
+## Download migration helper
 
-Above is the essence of what you're doing. More detailed information follows below.
-
-### Download migration helper
-
-We will use some handy scripts to help that Atlassian provide. Download Atlassian's   
-<a href="https://bitbucket.org/atlassian/svn-migration-scripts/downloads" target="_blank">svn-migration-scripts.jar</a> – either 
+The whole process is greatly simplified by using some handy scripts to help that Atlassian provide. Download Atlassian's
+<a href="https://bitbucket.org/atlassian/svn-migration-scripts/downloads" target="_blank">svn-migration-scripts.jar</a> – either
 via your browser or at the command line using `wget`:
 
 ~~~
@@ -90,33 +74,50 @@ You appear to be running on a case-insensitive file-system. This is unsupported,
 Cannot connect directly to internet. This may interfere with your ability to clone Subversion repositories and push Git repositories.
 ~~~
 
-The case insensitive message may appear on Windows and Mac OS X systems. What to do? On Windows you can suck-it-and-see, whilst on a Mac you can solve this by mounting a temporary 5GB disk image that you could call `GitMigration`
+In a corporate environment with a proxy server you might get the "Cannot
+connect directly to internet" message you see above. Don't worry
+about it if your source and target repositories are not in the cloud.
+
+The case insensitive message may appear on Windows and Mac OS X systems.
+What to do? On Windows you can suck-it-and-see, whilst on a Mac you
+can solve this by mounting a temporary 5GB disk image.
+
+#### Mount a case sensitive disk image on a Mac
+
+You can create a temporary case-sensitive disk image in a directory called `GitMigration`:
 
 ~~~
 java -jar ~/svn-migration-scripts.jar create-disk-image 5 GitMigration
 ~~~
 
-In a corporate environment with a proxy server you might get the "Cannot connect directly to internet" message you see above. Don't worry about it if your source and target repositories are not in the cloud.
+#### Otherwise create a `GitMigration` directory
 
-### Extract the author information
+If you skipped the above step then the rest of this post will assume that
+you have created a directory in which to the migration:
+ 
+~~~bash
+mkdir GitMigration
+~~~
+
+## Create an authors mapping file
 
 Git knows users by full name and email address, whilst SVN only knows a username. 
 
-The following command will create an author mapping file.
+The following command will create an author mapping file:
 
-~~~
+~~~bash
 cd ~/GitMigration 
 java -jar ~/svn-migration-scripts.jar authors https://your.repo/your-project/ > authors.txt
 ~~~
 
-This will five you a file like
+This will create a file like:
 
 ~~~
 j.doe = j.doe <j.doe@mycompany.com> 
 m.smith = m.smith <m.smith@mycompany.com>
 ~~~
 
-Fix these to be whatever they need to be, perhaps
+Fix these to be whatever they need to be, perhaps:
 
 ~~~
 j.doe = Jane Doe <jane.doe@your.company.com> 
@@ -125,21 +126,21 @@ m.smith = Mark Smith <mark.smith@your.company.com>
 
 ## Clone the SVN repository
 
-Transform your SVN trunk, branches and tags into a new Git repository. The following 
-assumes that your SVN repository is structure with a standard trunk, branch and tag structure:
+Transform your SVN trunk, branches and tags into a new Git repository. The following
+assumes that your SVN repository follows a standard trunk, branch and tag layout:
 
 ~~~
 git svn clone --stdlayout --authors-file=authors.txt <svn-repo>/<project> <git-repo-name>
 ~~~
 
-Where `<svn-repo>/<project>` is the URI to the SVN project and `<git-repo-name>` is the new 
+Where `<svn-repo>/<project>` is the URI to the SVN project and `<git-repo-name>` is the new
 local Git repository that you are cloning into. For example, you might execute:
 
 ~~~
 git svn clone --stdlayout --authors-file=authors.txt https://your.svn.repo/your-svn-project-name/ your-git-project-name
 ~~~
 
-### Non-statndard SVN layouts
+#### Non-standard SVN layouts?
 
 Use command-line options to identify non-standard SVN trunk, branch and tag structures:
 
@@ -170,15 +171,15 @@ java -Dfile.encoding=utf-8 -jar ~/svn-migration-scripts.jar clean-git --force
 
 ## Create an actual remote Git repository 
 
-You will now need an actual Git remote repository. This may be a GitHub account, 
-a BitBucket server, or something else. Generally you will use their user interface 
+You will now need an actual Git remote repository. This may be a GitHub account,
+a BitBucket server, or something else. Generally you will use their user interface
 to create a new empty repository and then take note of
 the repository URL.
 
 ### Add an origin remote to you local Git repository
 
-Assuming that your GitHub or BitBucket server will become your official 
-code-base and be known as the `origin` you would set this into your 
+Assuming that your GitHub or BitBucket server will become your official
+code-base and be known as the `origin` you would set this into your
 local repository. For example:
 
 ~~~
@@ -207,3 +208,34 @@ git push --tags
 ## Let others know of the new repository
 
 Let everyone know of the new repository.
+
+## Bare bones run-sheet
+
+The following is a bare-bones run sheet of all that I have describe above.
+Modify it with your repository and user names.
+
+~~~bash
+# Download Atlassian migration scripts
+cd ~
+wget https://bitbucket.org/atlassian/svn-migration-scripts/downloads/svn-migration-scripts.jar
+java -jar ~/svn-migration-scripts.jar verify
+
+# Clone your SVN repository into a local Git repository
+mkdir GitMigration
+cd GitMigration
+git svn clone --stdlayout --authors-file=authors.txt http://your.svn.repo/your-svn-project local-git-repository
+
+# Clean up remote branches and tags in your local repo
+java -Dfile.encoding=utf-8 -jar ~/svn-migration-scripts.jar clean-git 
+java -Dfile.encoding=utf-8 -jar ~/svn-migration-scripts.jar clean-git --force
+
+# Create an actual remote Git repository, for example, on a GitHub or 
+# Bitbucket server, then come back and continue.
+
+# Add the remote origin URL to your local repo
+git remote add origin https://username@remote-repo-url/username/remote-repo-name.git 
+
+# Push all source and tags to your remote repo
+git push -u origin --all
+git push --tags
+~~~
