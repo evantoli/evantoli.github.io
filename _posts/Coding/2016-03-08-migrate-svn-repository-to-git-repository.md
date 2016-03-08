@@ -18,13 +18,43 @@ This is a condensed TL;DR version of the Atlassian tutorial
 
 It assumes you are familiar with SVN and GIT concepts. If you're not then refer to the Atlassian tutorial.
 
+The whole process is detailed below but will look something like:
+
+~~~bash
+# Download migration scripts
+cd ~
+wget https://bitbucket.org/atlassian/svn-migration-scripts/downloads/svn-migration-scripts.jar
+java -jar ~/svn-migration-scripts.jar verify
+
+# Clone your SVN repository into a local Git repository
+mkdir GitMigration
+cd GitMigration
+git svn clone --stdlayout --authors-file=authors.txt http://your.svn.repo/your-svn-project local-git-repository
+
+# Clean up remote branches and tags
+java -Dfile.encoding=utf-8 -jar ~/svn-migration-scripts.jar clean-git 
+java -Dfile.encoding=utf-8 -jar ~/svn-migration-scripts.jar clean-git --force
+
+# Create an actual remote Git repository, for example, on a GitHub or 
+# Bitbucket server, then come back and continue.
+
+# Add the remote origin URL
+git remote add origin https://username@remote-repo-url/username/remote-repo-name.git 
+
+# Push all source and tags
+git push -u origin --all
+git push --tags
+~~~
+
 <!--end-of-excerpt-->
 
-## Prepare
+## The full process
+
+Above is the essence of what you're doing. More detailed information follows below.
 
 ### Download migration helper
 
-Download Atlassian's 
+We will use some handy scripts to help that Atlassian provide. Download Atlassian's   
 <a href="https://bitbucket.org/atlassian/svn-migration-scripts/downloads" target="_blank">svn-migration-scripts.jar</a> – either 
 via your browser or at the command line using `wget`:
 
@@ -73,12 +103,14 @@ In a corporate environment with a proxy server you might get the "Cannot connect
 Git knows users by full name and email address, whilst SVN only knows a username. 
 
 The following command will create an author mapping file.
+
 ~~~
 cd ~/GitMigration 
 java -jar ~/svn-migration-scripts.jar authors https://your.repo/your-project/ > authors.txt
 ~~~
 
 This will five you a file like
+
 ~~~
 j.doe = j.doe <j.doe@mycompany.com> 
 m.smith = m.smith <m.smith@mycompany.com>
