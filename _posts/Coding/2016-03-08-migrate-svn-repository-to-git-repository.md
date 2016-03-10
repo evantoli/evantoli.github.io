@@ -151,6 +151,16 @@ git svn clone --trunk=/trunk --branches=/branches
  <svn-repo>/<project> <git-repo-name>
 ~~~
 
+##### Errors with non-standard layout
+
+I noticed when running this migration on Windows that I can do everything in this post from a Git-Bash shell except `git svn clone` with a non-standard layout where I get an error that goes away if I use an ordinary Windows CMD shell (`cmd.exe`). The error looks something like:
+
+~~~
+svn-remote.svn: remote ref '\Program Files\Git\Program Files\Git\trunk\myproject;refs\remotes\origin\trunk' must start with 'refs/'
+~~~
+
+You can see by the duplicated `\Program Files\Git\` that something funky is going on. I haven't tried from a Cygwin `mintty` shell, but my guess is that you may also get this problem.
+
 ## Convert remote branches to local branches and Git tags
 
 The `git svn clone` command converts SVN branches and tags into Git remote branches. We
