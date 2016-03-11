@@ -57,7 +57,7 @@ module.exports = (grunt) ->
 
     exec:
       jekyll:
-        cmd: "jekyll build --trace"
+        cmd: "jekyll build --trace --config _config.yml,_config.dev.yml"
 
     watch:
       options:
@@ -82,6 +82,7 @@ module.exports = (grunt) ->
     connect:
       server:
         options:
+          host: 'localhost'
           port: 4000
           base: '_site'
           livereload: true

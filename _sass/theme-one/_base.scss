@@ -13,3 +13,9 @@ ul, ol, dl, figure,
   margin-bottom: $spacing-unit / 2;
 }
 
+@include media-breakpoint-up(sm) {
+  .img-half-width {
+    max-width: 50%;
+  }
+}
+

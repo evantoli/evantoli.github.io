@@ -15,12 +15,12 @@ image:
 ---
 
 In this post I describe the steps that will easily get your
-source code out of Subversion and into Git. This process
-is actually a condensed—spare me the fluff version—of the Atlassian tutorial 
-"<a href="https://www.atlassian.com/git/tutorials/migrating-overview" target="_blank">Migrate to Git from SVN</a>"
+source code out of Subversion and into Git. This process I describe
+is actually a condensed—spare me the fluff—version of the Atlassian tutorial 
+"<a href="https://www.atlassian.com/git/tutorials/migrating-overview" target="_blank">Migrate to Git from SVN</a>".
 
 I'll assume you are familiar with SVN and GIT concepts. If you're not then perhaps you should
-refer to the Atlassian tutorial which goes into much, much more detail.
+refer to the Atlassian tutorial which goes into much more detail.
 
 At the end of this post I also provide a bare-bones run-sheet outlining the commands in
 a script fashion.
