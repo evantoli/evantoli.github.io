@@ -75,25 +75,25 @@ header.site-header {
   }
 }
 
+body {
+  > footer {
+    margin-top: 1rem;
+    border-top: 2pt solid $grey-color;
 
-footer {
-  margin-top: 1rem;
-  border-top: 2pt solid $grey-color;
+    > .container {
+      max-width: 60rem;
+    }
 
-  > .container {
-    max-width: 60rem;
-  }
+    .footer-heading {
+      font-size: $font-size-base;
+    }
 
-  .footer-heading {
-    font-size: $font-size-base;
-  }
-
-  .contact-list,
-  .social-media-list {
-    list-style: none;
-    margin-left: 0;
-    padding: 0;
+    .contact-list,
+    .social-media-list {
+      list-style: none;
+      margin-left: 0;
+      padding: 0;
+    }
   }
 }
-
 
