@@ -44,7 +44,7 @@ Check the source code to see the many embedded elements within paragraphs.
 
 ###### Heading 6
 
-### Body text
+## Body text
 
 I want to show you what *some italics* looks like, but then thought
 it would be remiss if I didn't also show **some bold** text. Of course you are
@@ -74,7 +74,7 @@ following formula:
     °F = 9⁄5 × °C + 32
 </pre>      
 
-### Citations, quotes and blockquotes
+## Citations, quotes and blockquotes
 
 Now we turn our attentions to how citations will
 be formatted when they appear within a HTML `<cite>` tag. In the
@@ -138,6 +138,16 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Tables
 
+### A simple table
+
+| Header1 | Header2 | Header3 |
+|:--------|:-------:|--------:|
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+{: class="table"}
+
+### A table with groups and footer
+
 | Header1 | Header2 | Header3 |
 |:--------|:-------:|--------:|
 | cell1   | cell2   | cell3   |
@@ -147,7 +157,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
 | cell4   | cell5   | cell6   |
 |=====
 | Foot1   | Foot2   | Foot3
-{: rules="groups"}
+{: rules="groups" class="table"}
 
 ## Code Snippets
 
@@ -161,17 +171,56 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Buttons
 
-Make any link standout more when applying the `.btn` class.
+### Buttons with different styling
 
-{% highlight html %}
-<a href="#" class="btn btn-success">Success Button</a>
-{% endhighlight %}
+Make any link look like a button by applying the `.btn` class. 
 
-<div markdown="0"><a href="#" class="btn">Primary Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-success">Success Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-warning">Warning Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-danger">Danger Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-info">Info Button</a></div>
+<p>
+    <button type="button" class="btn" title="btn-primary">Button</button>
+</p>
+
+Add any of the following classes to emphasize the kind of button:
+
+* `btn-primary` – Provides extra visual weight and identifies the primary action in a set of buttons
+* `btn-secondary` – Secondary, outline button
+* `btn-success` – Indicates a successful or positive action
+* `btn-info` – Contextual button for informational alert messages
+* `btn-warning` – Indicates caution should be taken with this action
+* `btn-danger` – Indicates a dangerous or potentially negative action
+
+<p>
+    <button type="button" class="btn btn-primary" title="btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary" title="btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success" title="btn-success">Success</button>
+    <button type="button" class="btn btn-info" title="btn-info">Info</button>
+    <button type="button" class="btn btn-warning" title="btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger" title="btn-danger">Danger</button>
+</p>
+
+### Button that looks like a link
+
+Deemphasize a button by making it look like a link while maintaining button behavior
+by using the `btn-link` class:
+
+<p>
+    <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+    <button type="button" class="btn btn-link">Button disguised as link</button>
+</p>
+
+
+
+## Links that look like buttons
+
+Make any link look like a button by applying the `.btn` class.
+
+<p>
+    <a href="#" class="btn btn-primary">Primary</a>
+    <a href="#" class="btn btn-secondary">Secondary</a>
+    <a href="#" class="btn btn-success">Success</a>
+    <a href="#" class="btn btn-warning">Warning</a>
+    <a href="#" class="btn btn-danger">Danger</a>
+    <a href="#" class="btn btn-info">Info</a>
+</p>
 
 ## Notices
 
